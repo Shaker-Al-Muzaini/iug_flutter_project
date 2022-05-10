@@ -16,7 +16,9 @@ class Register_Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar:AppBar(
+
         leading:IconButton(
+
             onPressed:(){
               Navigator.pop(context);
             },
@@ -51,8 +53,6 @@ class Register_Screen extends StatelessWidget {
                             color:Colors.black,
                             fontSize:15,
                             fontFamily:'cairo',
-
-
                           )
                       )),
                   const SizedBox(
