@@ -15,15 +15,16 @@ class Register_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:Colors.white,
       appBar:AppBar(
-
+        backgroundColor:Colors.white,
+        elevation:0.0,
         leading:IconButton(
-
             onPressed:(){
               Navigator.pop(context);
             },
             icon:const Icon(Icons
-          .arrow_back_ios)
+          .arrow_back_ios,color:Colors.black,)
       ),),
       body:Center(
         child: SingleChildScrollView(
@@ -32,9 +33,7 @@ class Register_Screen extends StatelessWidget {
             child: Form(
               key:Form_Register,
               child: Column(
-
                 children:  [
-
                   const Text('Welcome',
                       style:TextStyle(
                         color:Colors.black,

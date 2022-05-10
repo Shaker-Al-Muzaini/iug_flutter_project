@@ -1,6 +1,7 @@
-// ignore_for_file: camel_case_types, non_constant_identifier_names, avoid_print, avoid_unnecessary_containers, sized_box_for_whitespace
+// ignore_for_file: camel_case_types, non_constant_identifier_names, avoid_print, avoid_unnecessary_containers, sized_box_for_whitespace, unused_label
 
 import 'package:flutter/material.dart';
+import 'package:iug_flutter_project/modules/home_screen.dart';
 import 'package:iug_flutter_project/modules/register.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
 
@@ -128,8 +129,10 @@ class _login_secrrnState extends State<login_secrrn> {
                       if(Form_Login.currentState!.validate()){
                         print(email_controller.text);
                         print(password_controller.text);
+                        Navigator.push(context,
+                            MaterialPageRoute(builder:(context)=>const home_screen())
+                        );
                       }
-
                     },
                     text:'LOGIN',
                     BorderRadiuss:1,

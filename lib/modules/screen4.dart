@@ -14,6 +14,7 @@ class screen4 extends StatelessWidget{
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            mainAxisAlignment:MainAxisAlignment.center,
             children:[
               De_Button(
                 backgroundColor:Colors.redAccent,

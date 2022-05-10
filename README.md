@@ -1,5 +1,4 @@
 # iug_flutter_project
-
 IUG_Flutter_Project
 
 ## Getting Started
