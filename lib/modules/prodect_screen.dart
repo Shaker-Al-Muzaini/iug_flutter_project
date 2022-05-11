@@ -120,7 +120,7 @@ class _Prodect_secreen extends State<Prodect_secreen> {
                        function:(){
                          setState(() {
                            Navigator.push(context,
-                               MaterialPageRoute(builder:(context)=>const oreder_screen())
+                               MaterialPageRoute(builder:(context)=>const  oreder_screen())
                            );
                          });
                        },

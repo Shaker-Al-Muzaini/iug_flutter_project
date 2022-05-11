@@ -14,46 +14,48 @@ class _oreder_screenState extends State<oreder_screen> {
   @override
   Widget build(BuildContext context) {
     return
-      SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height:240,
-              color:Colors.black54,
-              child:Padding(
-                padding: const EdgeInsets.only(left:20,top:150),
-                child: Column(
-                  crossAxisAlignment:CrossAxisAlignment.start,
-                  children:const[
-                    Text('Your Oreder',
-                      style:TextStyle(
-                        color:Colors.white,
-                        fontSize:24,
-                        fontWeight:FontWeight.w700,
+      Container(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                width: double.infinity,
+                height:240,
+                color:Colors.black54,
+                child:Padding(
+                  padding: const EdgeInsets.only(left:20,top:150),
+                  child: Column(
+                    crossAxisAlignment:CrossAxisAlignment.start,
+                    children:const[
+                      Text('Your Oreder',
+                        style:TextStyle(
+                          color:Colors.white,
+                          fontSize:24,
+                          fontWeight:FontWeight.w700,
+                        ),
                       ),
-                    ),
-                    Text('Oreder NO.#123-456',
-                      style:TextStyle(
-                        color:Colors.white,
-                        fontSize:14,
-                        fontWeight:FontWeight.w300,
+                      Text('Oreder NO.#123-456',
+                        style:TextStyle(
+                          color:Colors.white,
+                          fontSize:14,
+                          fontWeight:FontWeight.w300,
+                        ),
                       ),
-                    ),
-                  ]
+                    ]
+                  ),
                 ),
               ),
-            ),
-                   ListView.separated(
-                     shrinkWrap:true,
-                     physics:const NeverScrollableScrollPhysics(),
-                     itemBuilder:(context,index)=>order((orders[index]),),
+                     ListView.separated(
+                       shrinkWrap:true,
+                       physics:const NeverScrollableScrollPhysics(),
+                       itemBuilder:(context,index)=>order((orders[index]),),
 
-                     separatorBuilder:(context,index)=>const SizedBox(height:5),
-                     itemCount:orders.length,
-                   )
-          ],
+                       separatorBuilder:(context,index)=>const SizedBox(height:5),
+                       itemCount:orders.length,
+                     )
+            ],
 
+          ),
         ),
       );
 

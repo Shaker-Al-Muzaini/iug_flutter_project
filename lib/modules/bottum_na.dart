@@ -38,8 +38,6 @@ class _bottom_naState extends State<bottom_na> {
         centerTitle:true,
         leading:IconButton(
           onPressed:(){
-            Navigator.push(context,
-                MaterialPageRoute(builder:(context)=> const accout_user()));
           },
           icon:const Icon(Icons.menu,color:Colors.black),
         ),

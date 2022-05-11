@@ -25,37 +25,39 @@ class accout_user extends StatelessWidget {
       //     )
       //   ],
       // ),
-      SingleChildScrollView(
-        child: Column(
-          children: [
-            Row(
-              children:  [
-                      const Image(
-                      image:AssetImage('images/s.jpg'),
-                      height:120,
-                      width:120,
-                      ),
-                Column(
-                  children: const [
-                    Text('Shaker Almazuini',style:TextStyle(
-                      fontSize:14,
-                      fontWeight:FontWeight.w600,
-                    )),
-                    Text('sshakiralmaznin.gmail.com',style:TextStyle(
-                      fontSize:12,
-                      fontWeight:FontWeight.w500,
-                    )),
-                  ],
-                ),
-              ],
-            ),
-           ListView.separated(
-             shrinkWrap:true,
-               physics:const NeverScrollableScrollPhysics(),
-               itemBuilder:(context,index)=>accout(accouts[index]),
-               separatorBuilder:(context,index)=>const SizedBox(height:7,),
-               itemCount:accouts.length)
-          ],
+      Container(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Row(
+                children:  [
+                        const Image(
+                        image:AssetImage('images/s.jpg'),
+                        height:120,
+                        width:120,
+                        ),
+                  Column(
+                    children: const [
+                      Text('Shaker Almazuini',style:TextStyle(
+                        fontSize:14,
+                        fontWeight:FontWeight.w600,
+                      )),
+                      Text('sshakiralmaznin.gmail.com',style:TextStyle(
+                        fontSize:12,
+                        fontWeight:FontWeight.w500,
+                      )),
+                    ],
+                  ),
+                ],
+              ),
+             ListView.separated(
+               shrinkWrap:true,
+                 physics:const NeverScrollableScrollPhysics(),
+                 itemBuilder:(context,index)=>accout(accouts[index]),
+                 separatorBuilder:(context,index)=>const SizedBox(height:7,),
+                 itemCount:accouts.length)
+            ],
+          ),
         ),
       );
   }
