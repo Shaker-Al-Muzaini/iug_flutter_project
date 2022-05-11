@@ -1,64 +1,67 @@
-// ignore_for_file: camel_case_types, avoid_print
+// ignore_for_file: camel_case_types, avoid_print, must_be_immutable, use_key_in_widget_constructors
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iug_flutter_project/models/users.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
-class oreder_screen extends StatefulWidget {
-  const oreder_screen({Key? key}) : super(key: key);
-
-  @override
-  State<oreder_screen> createState() => _oreder_screenState();
-}
-
-class _oreder_screenState extends State<oreder_screen> {
-  var cont =0;
+import '../models/blocs.dart';
+import '../models/states.dart';
+class oreder_screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-      SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              height:240,
-              color:Colors.black54,
-              child:Padding(
-                padding: const EdgeInsets.only(left:20,top:150),
-                child: Column(
-                  crossAxisAlignment:CrossAxisAlignment.start,
-                  children:const[
-                    Text('Your Oreder',
-                      style:TextStyle(
-                        color:Colors.white,
-                        fontSize:24,
-                        fontWeight:FontWeight.w700,
+      BlocProvider(
+        create: (BuildContext context)=>All_bloc_cubic(),
+        child: BlocConsumer<All_bloc_cubic ,All_Statels>(
+          listener: (BuildContext context, state){},
+          builder: (BuildContext context, Object? state){
+            return  SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height:240,
+                    color:Colors.black54,
+                    child:Padding(
+                      padding: const EdgeInsets.only(left:20,top:150),
+                      child: Column(
+                          crossAxisAlignment:CrossAxisAlignment.start,
+                          children:const[
+                            Text('Your Oreder',
+                              style:TextStyle(
+                                color:Colors.white,
+                                fontSize:24,
+                                fontWeight:FontWeight.w700,
+                              ),
+                            ),
+                            Text('Oreder NO.#123-456',
+                              style:TextStyle(
+                                color:Colors.white,
+                                fontSize:14,
+                                fontWeight:FontWeight.w300,
+                              ),
+                            ),
+                          ]
                       ),
                     ),
-                    Text('Oreder NO.#123-456',
-                      style:TextStyle(
-                        color:Colors.white,
-                        fontSize:14,
-                        fontWeight:FontWeight.w300,
-                      ),
-                    ),
-                  ]
-                ),
+                  ),
+                  ListView.separated(
+                    shrinkWrap:true,
+                    physics:const NeverScrollableScrollPhysics(),
+                    itemBuilder:(context,index)=>order((orders[index]),context),
+
+                    separatorBuilder:(context,index)=>const SizedBox(height:5),
+                    itemCount:orders.length,
+                  )
+                ],
+
               ),
-            ),
-                   ListView.separated(
-                     shrinkWrap:true,
-                     physics:const NeverScrollableScrollPhysics(),
-                     itemBuilder:(context,index)=>order((orders[index]),),
-
-                     separatorBuilder:(context,index)=>const SizedBox(height:5),
-                     itemCount:orders.length,
-                   )
-          ],
-
+            );
+          },
         ),
       );
 
   }
-  Widget order(ordering o)=>Column(
+  Widget order(ordering o,context)=>Column(
       children: [
         Row(
           children: [
@@ -133,10 +136,8 @@ class _oreder_screenState extends State<oreder_screen> {
                                 children:[
                                   TextButton(
                                     onPressed:(){
-                                      setState(() {
-                                        cont++;
-                                        print(cont);
-                                      });
+                                      All_bloc_cubic.get(context)
+                                          .cont_order_plus();
                                     },
                                     child: const Text('+',
                                         style:TextStyle(
@@ -145,16 +146,16 @@ class _oreder_screenState extends State<oreder_screen> {
                                           color:Colors.black,
                                         )),
                                   ),
-                                  Text('$cont' ,style:const TextStyle(
+                                  Text('${All_bloc_cubic.get(context).cont_order}' ,
+                                      style:const
+                                  TextStyle(
                                     fontSize:14,
 
                                   )),
                                   TextButton(
                                     onPressed:(){
-                                      setState(() {
-                                        cont--;
-                                        print(cont);
-                                      });
+                                      All_bloc_cubic.get(context)
+                                          .cont_order_minus();
                                     },
                                     child: const Text('-',
                                         style:TextStyle(

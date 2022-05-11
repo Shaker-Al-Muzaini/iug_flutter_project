@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-//import 'package:iug_flutter_project/modules/accout_user.dart';
-//import 'package:iug_flutter_project/modules/home_screen.dart';
-
+// import 'package:iug_flutter_project/modules/order_screen.dart';
+import 'package:iug_flutter_project/modules/prodect_screen.dart';
 import 'modules/bottum_na.dart';
-//import 'package:iug_flutter_project/modules/prodect_screen.dart';
-//import 'package:iug_flutter_project/modules/login.dart';
-//import 'package:iug_flutter_project/modules/screen4.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +12,7 @@ class  MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 
-    return  const MaterialApp(
+    return    const MaterialApp(
       debugShowCheckedModeBanner: false,
       home:bottom_na(),
     );

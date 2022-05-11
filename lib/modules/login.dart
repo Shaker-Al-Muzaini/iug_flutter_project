@@ -130,7 +130,7 @@ class _login_secrrnState extends State<login_secrrn> {
                         print(email_controller.text);
                         print(password_controller.text);
                         Navigator.push(context,
-                            MaterialPageRoute(builder:(context)=>const home_screen())
+                            MaterialPageRoute(builder:(context)=> home_screen())
                         );
                       }
                     },

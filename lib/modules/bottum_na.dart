@@ -1,23 +1,20 @@
 // ignore_for_file: camel_case_types
-
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/modules/accout_user.dart';
 import 'package:iug_flutter_project/modules/home_screen.dart';
 import 'package:iug_flutter_project/modules/order_screen.dart';
 import 'package:iug_flutter_project/modules/seeting_scrren.dart';
-
 class bottom_na extends StatefulWidget {
   const bottom_na({Key? key}) : super(key: key);
 
   @override
   State<bottom_na> createState() => _bottom_naState();
 }
-
 class _bottom_naState extends State<bottom_na> {
   int indexs =0;
   List<Widget>screens=[
     const home_screen(),
-    const oreder_screen(),
+     oreder_screen(),
     const accout_user(),
     const setings_screen(),
   ];
@@ -38,8 +35,6 @@ class _bottom_naState extends State<bottom_na> {
         centerTitle:true,
         leading:IconButton(
           onPressed:(){
-            Navigator.push(context,
-                MaterialPageRoute(builder:(context)=> const accout_user()));
           },
           icon:const Icon(Icons.menu,color:Colors.black),
         ),
