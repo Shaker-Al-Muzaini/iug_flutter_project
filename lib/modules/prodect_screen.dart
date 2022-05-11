@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/models/users.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
+
+import 'order_screen.dart';
 class Prodect_secreen extends StatefulWidget {
   const Prodect_secreen({Key? key}) : super(key: key);
 
@@ -116,6 +118,11 @@ class _Prodect_secreen extends State<Prodect_secreen> {
                      child: De_Button(
                        backgroundColor:Colors.redAccent,
                        function:(){
+                         setState(() {
+                           Navigator.push(context,
+                               MaterialPageRoute(builder:(context)=>const oreder_screen())
+                           );
+                         });
                        },
                        text:'ADD TO CART',
                        BorderRadiuss:20,

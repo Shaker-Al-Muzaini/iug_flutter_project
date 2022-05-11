@@ -42,6 +42,9 @@ List<prodect>prodects=[
 
 ];
 
+
+//info_prodect_Dete2
+
 List<prodect2>prodects2=[
   prodect2(
     img:'images/OIP.png',
@@ -83,6 +86,11 @@ List<prodect2>prodects2=[
 ];
 
 
+//end
+
+
+
+//info_prodect_Types
 List<teype_product>teypes=[
   teype_product(
     price: '50',
@@ -98,6 +106,25 @@ List<teype_product>teypes=[
   )
 ];
 
-//
+//end
+
+
+//Info_Oreder_product
+
+List<ordering>orders=[
+  ordering(
+    img: 'images/OIP.png',
+    category:'Women',
+    name: 'Shaker',
+    price: '98',
+  ), ordering(
+    img: 'images/OIP.png',
+    category:'Women',
+    name: 'Shaker',
+    price: '98',
+  ),
+
+
+];
 
 
