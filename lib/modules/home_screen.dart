@@ -15,6 +15,7 @@ class home_screen extends StatefulWidget {
 }
 class _home_screenState extends State<home_screen> {
 
+  int indexs= 0;
   @override
   void initState() {
     // TODO: implement initState
@@ -22,27 +23,26 @@ class _home_screenState extends State<home_screen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor:Colors.white,
-      appBar:AppBar(
-        elevation:0.0,
-        backgroundColor:Colors.white,
-        centerTitle:true,
-        leading:IconButton(
-          onPressed:(){
-            Navigator.push(context,
-                MaterialPageRoute(builder:(context)=> const accout_user()));
-          },
-          icon:const Icon(Icons.menu,color:Colors.black),
-          ),
-        title:const Text('Home',style:TextStyle(color:Colors.black)),
-        actions: [
-          IconButton(onPressed:(){},
-              icon:const Icon(Icons.search,color:Colors.black,)
-          )
-        ],
-      ),
-       body:SingleChildScrollView(
+    return
+      // appBar:AppBar(
+      //   elevation:0.0,
+      //   backgroundColor:Colors.white,
+      //   centerTitle:true,
+      //   leading:IconButton(
+      //     onPressed:(){
+      //       Navigator.push(context,
+      //           MaterialPageRoute(builder:(context)=> const accout_user()));
+      //     },
+      //     icon:const Icon(Icons.menu,color:Colors.black),
+      //     ),
+      //   title:const Text('Home',style:TextStyle(color:Colors.black)),
+      //   actions: [
+      //     IconButton(onPressed:(){},
+      //         icon:const Icon(Icons.search,color:Colors.black,)
+      //     )
+      //   ],
+      // ),
+       SingleChildScrollView(
          child: Padding(
            padding: const EdgeInsets.all(10.0),
            child: Row(
@@ -66,8 +66,7 @@ class _home_screenState extends State<home_screen> {
              ],
            ),
          ),
-       )
-    );
+       );
   }
   bool isShop=true;
   bool isFavort=true;

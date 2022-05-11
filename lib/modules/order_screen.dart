@@ -13,31 +13,8 @@ class _oreder_screenState extends State<oreder_screen> {
   var cont =0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:AppBar(
-        centerTitle:true,
-        backgroundColor:Colors.black54,
-        elevation:0.0,
-        leading:
-        IconButton(
-            onPressed:(){
-              Navigator.pop(context);
-            },
-            icon:
-            const Icon(Icons.arrow_back_ios_rounded,color:Colors.white)
-        ),
-        title:const Text('Shopping Cart',style:TextStyle(color:Colors.white)),
-        actions: [
-          IconButton(
-              onPressed:(){
-
-              },
-              icon:
-              const Icon(Icons.search,color:Colors.white))
-
-        ],
-      ),
-      body:SingleChildScrollView(
+    return
+      SingleChildScrollView(
         child: Column(
           children: [
             Container(
@@ -78,8 +55,8 @@ class _oreder_screenState extends State<oreder_screen> {
           ],
 
         ),
-      ),
-    );
+      );
+
   }
   Widget order(ordering o)=>Column(
       children: [

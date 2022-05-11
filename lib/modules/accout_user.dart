@@ -9,23 +9,22 @@ class accout_user extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar:AppBar(
-        elevation:0.0,
-        backgroundColor:Colors.white,
-        centerTitle:true,
-        leading:IconButton(
-          onPressed:(){},
-          icon:const Icon(Icons.menu,color:Colors.black),
-        ),
-        title:const Text('Account',style:TextStyle(color:Colors.black)),
-        actions: [
-          IconButton(onPressed:(){},
-              icon:const Icon(Icons.search,color:Colors.black,)
-          )
-        ],
-      ),
-      body:
+    return
+      // appBar:AppBar(
+      //   elevation:0.0,
+      //   backgroundColor:Colors.white,
+      //   centerTitle:true,
+      //   leading:IconButton(
+      //     onPressed:(){},
+      //     icon:const Icon(Icons.menu,color:Colors.black),
+      //   ),
+      //   title:const Text('Account',style:TextStyle(color:Colors.black)),
+      //   actions: [
+      //     IconButton(onPressed:(){},
+      //         icon:const Icon(Icons.search,color:Colors.black,)
+      //     )
+      //   ],
+      // ),
       SingleChildScrollView(
         child: Column(
           children: [
@@ -58,8 +57,7 @@ class accout_user extends StatelessWidget {
                itemCount:accouts.length)
           ],
         ),
-      ),
-    );
+      );
   }
 
   Widget accout(accout_date a)=>Row(
