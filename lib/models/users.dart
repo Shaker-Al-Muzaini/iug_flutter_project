@@ -7,85 +7,41 @@ List<prodect>prodects=[
   prodect(
     img:'images/OIP.png',
     category: 'phone',
-    name: 'shaker',
-    price: '16',
+    name: 'sdfsdf',
+    price: '1505',
+  ),
+  prodect(
+    img:'images/OIP.png',
+    category: 'sdfew',
+    name: 'adf',
+    price: '904',
   ),
   prodect(
     img:'images/OIP.png',
     category: 'phone',
-    name: 'shaker',
-    price: '16',
+    name: 'sdfewf',
+    price: '56',
   ),
   prodect(
     img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
+    category: 'erwedf',
+    name: 'erwer',
+    price: '15',
   ),
   prodect(
     img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
+    category: 'wer',
+    name: 'wejwe',
+    price: '90',
   ),
   prodect(
     img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
-  ),
-  prodect(
-    img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
+    category: 'sdfjasdf',
+    name: 'lsdsdf',
+    price: '4865',
   ),
 
 ];
-
-
-//info_prodect_Dete2
-
-List<prodect2>prodects2=[
-  prodect2(
-    img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
-  ),
-  prodect2(
-    img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
-  ),
-  prodect2(
-    img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
-  ),
-  prodect2(
-    img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
-  ),
-  prodect2(
-    img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
-  ),
-  prodect2(
-    img:'images/OIP.png',
-    category: 'phone',
-    name: 'shaker',
-    price: '16',
-  ),
-
-];
-
 
 //end
 
