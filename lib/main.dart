@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/modules/home_screen.dart';
-import 'package:iug_flutter_project/modules/prodect_screen.dart';
+//import 'package:iug_flutter_project/modules/prodect_screen.dart';
 //import 'package:iug_flutter_project/modules/login.dart';
 //import 'package:iug_flutter_project/modules/screen4.dart';
 
@@ -15,7 +15,7 @@ class  MyApp extends StatelessWidget{
 
     return  const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Prodect_secreen(),
+      home:home_screen(),
     );
   }
 }

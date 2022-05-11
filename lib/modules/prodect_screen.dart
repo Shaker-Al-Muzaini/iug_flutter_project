@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, non_constant_identifier_names, avoid_print, unnecessary_const
 import 'package:flutter/material.dart';
+import 'package:iug_flutter_project/models/users.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
 class Prodect_secreen extends StatefulWidget {
   const Prodect_secreen({Key? key}) : super(key: key);
@@ -187,15 +188,15 @@ class _Prodect_secreen extends State<Prodect_secreen> {
              ListView.separated(
                  shrinkWrap:true,
                  physics:const NeverScrollableScrollPhysics(),
-                 itemBuilder:(context,index)=>Cart_Prodect(),
+                 itemBuilder:(context,index)=>Cart_Prodect(teypes[index]),
                  separatorBuilder:(context,index)=>const SizedBox(height:2),
-                 itemCount:2)
+                 itemCount:teypes.length)
            ],
          ),
        ),
     );
   }
-  Widget Cart_Prodect()=>Column(
+  Widget Cart_Prodect(teype_product tp)=>Column(
       children: [
         Row(
           children: [
@@ -207,8 +208,8 @@ class _Prodect_secreen extends State<Prodect_secreen> {
                     decoration:BoxDecoration(
                       border:Border.all(width:1),
                     ),
-                    child: const Image(
-                      image:AssetImage('images/OIP.png'),
+                    child:  Image(
+                      image:AssetImage(tp.img!),
                       height:120,
                       width:120,
                     ),
@@ -224,16 +225,17 @@ class _Prodect_secreen extends State<Prodect_secreen> {
                   Padding(
                     padding: const EdgeInsets.only(bottom:10),
                     child: Row(
-                      children:const [
-                        Text('white Dress',
-                          style:TextStyle(
+                      children: [
+                        Text(tp.name!,
+                          style:const TextStyle(
                             fontSize:20,
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(left:110),
-                          child: Text('\$15',style:
-                          TextStyle(
+                         Padding(
+                          padding:  const EdgeInsets.only(left:110),
+                          child: Text('\$'+tp.price!,
+                              style:
+                          const TextStyle(
                               color:Colors.red)
                           ),
                         ),
@@ -243,9 +245,9 @@ class _Prodect_secreen extends State<Prodect_secreen> {
                   Padding(
                     padding: const EdgeInsets.only(bottom:15),
                     child: Row(
-                      children:const [
-                        Text('Women',
-                          style:TextStyle(
+                      children: [
+                        Text(tp.category!,
+                          style:const TextStyle(
                             fontSize:15,
                           ),
                         ),

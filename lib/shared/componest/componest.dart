@@ -70,7 +70,7 @@ class prodect{
     required this.price,
   });
 }
-class prodect2 {
+class prodect2{
   late final String? img;
   late final String? name;
   late final String? category;
@@ -83,4 +83,20 @@ class prodect2 {
     required this.price,
   });
 }
+
+
+class teype_product{
+  late final String? img;
+  late final String? name;
+  late final String? category;
+  late final String? price;
+
+  teype_product({
+    required this.img,
+    required this.name,
+    required this.category,
+    required this.price,
+  });
+}
+
 ///
