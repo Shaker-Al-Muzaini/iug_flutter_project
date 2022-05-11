@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/models/users.dart';
+import 'package:iug_flutter_project/modules/accout_user.dart';
 //import 'package:iug_flutter_project/models/users.dart';
 import 'package:iug_flutter_project/modules/prodect_screen.dart';
 
@@ -28,7 +29,10 @@ class _home_screenState extends State<home_screen> {
         backgroundColor:Colors.white,
         centerTitle:true,
         leading:IconButton(
-          onPressed:(){},
+          onPressed:(){
+            Navigator.push(context,
+                MaterialPageRoute(builder:(context)=> const accout_user()));
+          },
           icon:const Icon(Icons.menu,color:Colors.black),
           ),
         title:const Text('Home',style:TextStyle(color:Colors.black)),

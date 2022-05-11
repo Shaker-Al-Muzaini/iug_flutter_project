@@ -123,3 +123,17 @@ class ordering {
 }
 
 ///end
+
+
+//Info_accout_user_date
+class accout_date{
+  late final String? name;
+  late final Icon? icon1;
+   Icon? icon2;
+  accout_date({
+  required this.name,
+  required this.icon1,
+   this.icon2,
+});
+}
+
