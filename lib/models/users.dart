@@ -9,16 +9,46 @@ List<prodect>prodects=[
     name: 'shaker',
     price: '16',
   ),
+  prodect(
+    img:'images/OIP.png',
+    category: 'phone',
+    name: 'shaker',
+    price: '16',
+  ),
+
+
 ];
 
 List<prodect2>prodects2=[
   prodect2(
-      price:'20',
-      name:'ail',
+      price:'70',
+      name:'dsla',
       category:'tv',
-      img:'images/s.png'
-  )
+      img:'images/OIP.png'
+  ),
+  prodect2(
+      price:'70',
+      name:'dsla',
+      category:'tv',
+      img:'images/OIP.png'
+  ),
+  prodect2(
+      price:'70',
+      name:'dsla',
+      category:'tv',
+      img:'images/OIP.png'
+  ),
+
+  prodect2(
+      price:'70',
+      name:'dsla',
+      category:'tv',
+      img:'images/OIP.png'
+  ),
+
+
 ];
+
 
 //
 

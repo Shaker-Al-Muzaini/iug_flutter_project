@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, non_constant_identifier_names, must_be_immutable
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/models/users.dart';
+import 'package:iug_flutter_project/modules/prodect_screen.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
 
 class home_screen extends StatefulWidget {
@@ -35,35 +36,38 @@ class _home_screenState extends State<home_screen> {
         ],
       ),
       body:SingleChildScrollView(
-       // scrollDirection:Axis.vertical,
+        //scrollDirection:Axis.vertical,
         scrollDirection:Axis.horizontal,
-        child: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Row(
-            children: [
-              SizedBox(
-                height :double.infinity,
-                width :200,
-                child: ListView.separated(
-                    shrinkWrap:true,
-                    //physics:const NeverScrollableScrollPhysics(),
-                    itemBuilder:(context,index)=>prodect_list_l(prodects[index],),
-                    separatorBuilder:(context,index)
-                    =>const SizedBox (height:0),
-                    itemCount:prodects.length),
-              ),
-              SizedBox(
-                height :double.infinity,
-                width :200,
-                child: ListView.separated(
-                    shrinkWrap:true,
-                    //physics:const NeverScrollableScrollPhysics(),
-                    itemBuilder:(context,index)=>prodect_list_R(prodects2[index]),
-                    separatorBuilder:(context,index)
-                    =>const SizedBox (height:0),
-                    itemCount:prodects2.length),
-              ),
-            ],
+        child: SingleChildScrollView(
+          scrollDirection:Axis.horizontal,
+          child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Row(
+              children: [
+                SizedBox(
+                  height :double.infinity,
+                  width :200,
+                  child: ListView.separated(
+                      shrinkWrap:true,
+                      physics:const NeverScrollableScrollPhysics(),
+                      itemBuilder:(context,index)=>prodect_list_l(prodects[index],),
+                      separatorBuilder:(context,index)
+                      =>const SizedBox (height:0),
+                      itemCount:prodects.length),
+                ),
+                SizedBox(
+                  height :double.infinity,
+                  width :200,
+                  child: ListView.separated(
+                      shrinkWrap:true,
+                      physics:const NeverScrollableScrollPhysics(),
+                      itemBuilder:(context,index)=>prodect_list_R(prodects2[index]),
+                      separatorBuilder:(context,index)
+                      =>const SizedBox (height:0),
+                      itemCount:prodects2.length),
+                ),
+              ],
+            ),
           ),
         ),
       )
@@ -80,13 +84,20 @@ class _home_screenState extends State<home_screen> {
         Container(
           decoration: BoxDecoration(
             border:Border.all(width:1.5),
-
-            color:Colors.black,
+            color:Colors.white,
           ),
-          child:   Image(
-            image:AssetImage(p.img!),
-            height:170,
-            width:170,
+          child:GestureDetector(
+            onTap:(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context)=>const Prodect_secreen())
+              );
+            },
+            child: Image(
+              image:AssetImage(p.img!),
+              height:170,
+              width:170,
+            ),
           ),
         ),
         Padding(
@@ -148,12 +159,20 @@ class _home_screenState extends State<home_screen> {
           decoration: BoxDecoration(
             border:Border.all(width:1.5),
 
-            color:Colors.black,
+            color:Colors.white,
           ),
-          child:   Image(
-            image:AssetImage(p2.img!),
-            height:170,
-            width:170,
+          child:GestureDetector(
+            onTap:(){
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context)=>const Prodect_secreen())
+              );
+            },
+            child: Image(
+              image:AssetImage(p2.img!),
+              height:170,
+              width:170,
+            ),
           ),
         ),
         Padding(
@@ -166,11 +185,11 @@ class _home_screenState extends State<home_screen> {
                 child: IconButton(
                   onPressed:(){
                     setState (() {
-                      isShop_r=!isShop_r;
+                      isShop_l=!isShop_l;
                     });
                   },
                   icon: Icon(Icons.business_center_rounded ,
-                    color:isShop_r ? Colors.black :Colors.red,),
+                    color:isShop_l ? Colors.black :Colors.red,),
                 ),
               ),
             ],
@@ -185,11 +204,11 @@ class _home_screenState extends State<home_screen> {
                 child: IconButton(
                   onPressed:(){
                     setState(() {
-                      isFavort_r=!isFavort_r;
+                      isFavort_l=!isFavort_l;
                     });
                   },
                   icon:Icon(Icons.favorite ,
-                      color:isFavort_r ?Colors.black : Colors.red),
+                      color:isFavort_l ?Colors.black : Colors.red),
                 ),
               ),
             ],
