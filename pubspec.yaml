@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.4
   flutter_bloc: ^8.0.1
   bloc: ^8.0.3
+  firebase_core: ^1.17.0
 
 
 
