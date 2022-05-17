@@ -142,5 +142,3 @@ class home_screen extends StatelessWidget {
 
 }
 
-
-
