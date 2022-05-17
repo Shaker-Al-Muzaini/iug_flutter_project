@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types, non_constant_identifier_names, must_be_immutable
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iug_flutter_project/models/users.dart';
