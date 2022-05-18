@@ -1,45 +1,33 @@
 // ignore_for_file: unused_import
-
-import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:iug_flutter_project/modules/prodect_screen.dart';
 import 'firebase_options.dart';
+import 'package:flutter/material.dart';
+import 'package:iug_flutter_project/modules/login.dart';
 
-// import 'package:iug_flutter_project/modules/order_screen.dart';
-import 'modules/bottum_na.dart';
-
-// await Firebase.initializeApp(
-// options: DefaultFirebaseOptions.currentPlatform,
-// );
-
-// void main() async {
-//
-//     await Firebase.initializeApp(
-//   );
-//   runApp(const MyApp());
-// }
-
-void main() {
-   Firebase.initializeApp();
+void main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+   await Firebase.initializeApp();
   runApp(
-
       const MyApp());
 }
 
 
-class  MyApp extends StatelessWidget{
+class  MyApp extends StatefulWidget{
   const MyApp({Key? key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
   Widget build(BuildContext context) {
 
-    return     const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:bottom_na(),
+      home:login_secrrn(),
     );
   }
 }
-
-
 
 

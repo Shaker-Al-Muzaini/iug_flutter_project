@@ -29,6 +29,7 @@ Widget Text_Form_Field({
   required TextEditingController controll,
   required TextInputType keyboardType,
   required final Color cursor ,
+
 })=>TextFormField(
   controller:controll,
   onFieldSubmitted:(String value){
@@ -42,7 +43,7 @@ Widget Text_Form_Field({
     return null;
   },
   decoration:const InputDecoration(
-    labelText:'User Name',
+    labelText:'Email Name',
   ),
   style:const TextStyle(
     color:Colors.black,

@@ -1,4 +1,7 @@
-// ignore_for_file: non_constant_identifier_names, camel_case_types, unnecessary_question_mark
+// ignore_for_file: non_constant_identifier_names, camel_case_types, unnecessary_question_mark, avoid_print, unused_local_variable
+import 'dart:math';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iug_flutter_project/models/states.dart';
 class All_bloc_cubic extends Cubit<All_Statels>{
@@ -50,4 +53,39 @@ class All_bloc_cubic extends Cubit<All_Statels>{
     cont_order--;
     emit(cont_ordering_minus());
   }
+
+
+  bool ispass  =true;
+  void ispasswored(){
+    ispass=!ispass;
+    emit(ispasswored_stet());
+  }
+
+
+  void user_Login(){
+     String email;
+     String password;
+
+  }
+  String name='';
+  String email='';
+  String password='';
+  void user_Regestar({name,password,email}){
+      emit(user_R());
+      try {
+         FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email:email,
+          password:password,
+        ).then((value){
+          print('a');
+          print (value.user!.email);
+          print (value.user!.uid);
+          emit(user_successful());
+        }).catchError((error){e;});
+      } catch (e) {
+        print(e);
+      }
+  }
+
 }
+

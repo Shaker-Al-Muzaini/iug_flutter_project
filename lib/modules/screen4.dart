@@ -20,7 +20,7 @@ class screen4 extends StatelessWidget{
                 backgroundColor:Colors.redAccent,
                 function:(){
                   Navigator.push(context,
-                    MaterialPageRoute(builder:(context)=>const login_secrrn())
+                    MaterialPageRoute(builder:(context)=>login_secrrn())
                   );
                 },
                 text:'SIGN IN',

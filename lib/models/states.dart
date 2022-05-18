@@ -30,3 +30,22 @@ class cont_ordering_plus extends All_Statels{
 class cont_ordering_minus extends All_Statels{
 
 }
+class ispasswored_stet extends All_Statels{ }
+
+class user_R extends All_Statels{
+
+
+}
+class user_loding extends All_Statels{
+
+
+}
+class user_successful extends All_Statels{}
+class user_error extends All_Statels{
+final String error;
+user_error(this.error);
+
+}
+
+
+
