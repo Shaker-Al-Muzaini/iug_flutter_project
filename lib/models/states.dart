@@ -34,10 +34,8 @@ class ispasswored_stet extends All_Statels{ }
 
 class user_R extends All_Statels{
 
-
 }
 class user_loding extends All_Statels{
-
 
 }
 class user_successful extends All_Statels{}

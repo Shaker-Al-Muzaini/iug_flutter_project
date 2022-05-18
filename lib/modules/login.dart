@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, must_be_immutable, non_constant_identifier_names, avoid_print
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iug_flutter_project/modules/home_screen.dart';
@@ -7,6 +8,7 @@ import 'package:iug_flutter_project/modules/register.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
 import '../models/blocs.dart';
 import '../models/states.dart';
+import 'bottum_na.dart';
 
 class login_secrrn extends StatelessWidget {
   var email_controller=TextEditingController();
@@ -121,14 +123,23 @@ class login_secrrn extends StatelessWidget {
                           //By_Reusable components
                           De_Button(
                             backgroundColor:Colors.redAccent,
-                            function: (){
+                            function: ()async{
+                              All_bloc_cubic.get(context).user_Login();
                               if(Form_Login.currentState!.validate()){
-                                print(email_controller.text);
-                                print(password_controller.text);
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder:(context)=> const home_screen())
+                              try{
+                                final user = await FirebaseAuth.instance
+                                    .signInWithEmailAndPassword(
+                                  email:email_controller.text,
+                                  password:password_controller.text,
                                 );
+                                if(user != null){
+                                  Navigator.push(context,MaterialPageRoute
+                                    (builder: (context)=>const bottom_na()));
+                                }
+                              }catch(e){
+                                print(e);
                               }
+                             }
                             },
                             text:'LOGIN',
                             BorderRadiuss:1,

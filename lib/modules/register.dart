@@ -6,6 +6,7 @@ import 'package:iug_flutter_project/shared/componest/componest.dart';
 
 import '../models/blocs.dart';
 import '../models/states.dart';
+import 'bottum_na.dart';
 
 class Register_Screen extends StatelessWidget {
   var email_controller=TextEditingController();
@@ -100,7 +101,7 @@ class Register_Screen extends StatelessWidget {
                             print(value);
                           },
                           validator:(value){
-                            if(value!.isEmpty){
+                            if(value!.isEmpty ){
                               return'password is not be empty';
                             }
                             return null;
@@ -123,7 +124,6 @@ class Register_Screen extends StatelessWidget {
 
                           ),
 
-
                           style:const TextStyle(
                             color:Colors.black,
                             fontFamily:'cairo',
@@ -137,15 +137,15 @@ class Register_Screen extends StatelessWidget {
                         De_Button(
                           backgroundColor:Colors.redAccent,
                           function: () async{
-                            // if(Form_Register.currentState!.validate()){
+                             if(Form_Register.currentState!.validate()){
                                All_bloc_cubic.get(context).user_Regestar(
                                 name:name_controller.text,
                                 email:email_controller.text,
                                 password:password_controller.text,
                               );
-                               print(email_controller.text);
-                          // }
-
+                              Navigator.push(context,MaterialPageRoute
+                               (builder: (context)=>const bottom_na()));
+                           }
                           },
                           text:'Register',
                           BorderRadiuss:1,

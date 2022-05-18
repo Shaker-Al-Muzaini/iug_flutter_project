@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, camel_case_types, unnecessary_question_mark, avoid_print, unused_local_variable
+// ignore_for_file: non_constant_identifier_names, camel_case_types, unnecessary_question_mark, avoid_print, unused_local_variable, unnecessary_null_comparison
 import 'dart:math';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -61,19 +61,17 @@ class All_bloc_cubic extends Cubit<All_Statels>{
     emit(ispasswored_stet());
   }
 
-
-  void user_Login(){
-     String email;
-     String password;
-
-  }
-  String name='';
-  String email='';
   String password='';
-  void user_Regestar({name,password,email}){
+  String email='';
+  String name='';
+  Future<void>user_Login({email,password ,context}) async {
+    emit(user_loding());
+  }
+   Future <void> user_Regestar ({name,password,email}) async {
       emit(user_R());
       try {
-         FirebaseAuth.instance.createUserWithEmailAndPassword(
+        await FirebaseAuth.instance
+           .createUserWithEmailAndPassword(
           email:email,
           password:password,
         ).then((value){
@@ -82,9 +80,14 @@ class All_bloc_cubic extends Cubit<All_Statels>{
           print (value.user!.uid);
           emit(user_successful());
         }).catchError((error){e;});
-      } catch (e) {
-        print(e);
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'weak-password') {
+          print('The password provided is too weak.');
+        } else if (e.code == 'email-already-in-use') {
+          print('The account already exists for that email.');
+        }
       }
+
   }
 
 }

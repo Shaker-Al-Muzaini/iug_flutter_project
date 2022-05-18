@@ -3,15 +3,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/modules/login.dart';
+import 'modules/Page_view.dart';
 
-void main()async {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
    await Firebase.initializeApp();
   runApp(
       const MyApp());
 }
-
-
 class  MyApp extends StatefulWidget{
   const MyApp({Key? key}) : super(key: key);
 
