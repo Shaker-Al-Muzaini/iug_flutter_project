@@ -9,10 +9,11 @@ import 'package:iug_flutter_project/shared/componest/componest.dart';
 
 import '../models/blocs.dart';
 import 'order_screen.dart';
-class Prodect_secreen extends StatelessWidget {
+class Prodect_secreen extends StatelessWidget{
+
   const Prodect_secreen({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
     return BlocProvider(
       create: (BuildContext context)=>All_bloc_cubic(),
       child: BlocConsumer<All_bloc_cubic ,All_Statels>(
@@ -203,7 +204,7 @@ class Prodect_secreen extends StatelessWidget {
   }
 
   Widget  Cart_Prodect( teype_product tp  , context)=>Column(
-      children: [
+      children:[
         Row(
           children: [
             Row(

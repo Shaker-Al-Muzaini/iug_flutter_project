@@ -1,7 +1,7 @@
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
-
 
 //info_prodect_Dete
 List<prodect>prodects=[
@@ -10,36 +10,7 @@ List<prodect>prodects=[
     category: 'phone',
     name: 'sdfsdf',
     price: '1505',
-  ),
-  prodect(
-    img:'images/OIP.png',
-    category: 'sdfew',
-    name: 'adf',
-    price: '904',
-  ),
-  prodect(
-    img:'images/OIP.png',
-    category: 'phone',
-    name: 'sdfewf',
-    price: '56',
-  ),
-  prodect(
-    img:'images/OIP.png',
-    category: 'erwedf',
-    name: 'erwer',
-    price: '15',
-  ),
-  prodect(
-    img:'images/OIP.png',
-    category: 'wer',
-    name: 'wejwe',
-    price: '90',
-  ),
-  prodect(
-    img:'images/OIP.png',
-    category: 'sdfjasdf',
-    name: 'lsdsdf',
-    price: '4865',
+    id: '1',
   ),
 
 ];
@@ -95,37 +66,49 @@ List<accout_date>accouts=[
   accout_date(
     name:('Edit Profile'),
     icon1:const Icon(Icons.edit,color:Colors.red),
-    icon2: const Icon(Icons.arrow_forward_ios)
+    icon2: const Icon(Icons.arrow_forward_ios),
+    on_tap:(){},
   ),
   accout_date(
       name:('Shipping Address'),
       icon1:const Icon(Icons.location_pin,color:Colors.red),
-      icon2: const Icon(Icons.arrow_forward_ios)
+      icon2: const Icon(Icons.arrow_forward_ios),
+      on_tap:(){},
   ),
   accout_date(
       name:('Order History'),
       icon1:const Icon(Icons.access_time_outlined,color:Colors.red),
-      icon2: const Icon(Icons.arrow_forward_ios)
+      icon2: const Icon(Icons.arrow_forward_ios),
+      on_tap:(){},
   ),
   accout_date(
       name:('Track Order'),
       icon1:const Icon(Icons.folder_outlined,color:Colors.red),
-      icon2: const Icon(Icons.arrow_forward_ios)
+      icon2: const Icon(Icons.arrow_forward_ios),
+      on_tap:(){},
+
+
   ),
   accout_date(
       name:('Cards'),
       icon1:const Icon(Icons.card_travel_sharp,color:Colors.red),
-      icon2: const Icon(Icons.arrow_forward_ios)
+      icon2: const Icon(Icons.arrow_forward_ios),
+      on_tap:(){},
   ),
   accout_date(
       name:('Notifications'),
       icon1:const Icon(Icons.notifications_none,color:Colors.red),
-      icon2: const Icon(Icons.arrow_forward_ios)
+      icon2: const Icon(Icons.arrow_forward_ios),
+      on_tap:(){},
   ),
   accout_date(
       name:('Log Out'),
       icon1:const Icon(Icons.login_outlined,color:Colors.red),
     icon2:const Icon(Icons.arrow_forward_ios),
+    on_tap:(){
+        FirebaseAuth.instance.signOut();
+
+    },
   ),
 
 ];

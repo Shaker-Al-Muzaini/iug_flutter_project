@@ -42,8 +42,33 @@ class user_successful extends All_Statels{}
 class user_error extends All_Statels{
 final String error;
 user_error(this.error);
+}
+class user_loOut extends All_Statels{
+}
+
+
+class lodiding extends All_Statels{
 
 }
+
+class ImagePicker_successful extends All_Statels{ }
+
+class ImagePicker_error extends All_Statels{ }
+
+
+
+class Add_new_prdect extends All_Statels{}
+class Add_prdect_error extends All_Statels{}
+class Add_prdect_successful extends All_Statels{}
+
+class Get_prdect_error extends All_Statels{
+  final String error;
+  Get_prdect_error(this.error);
+}
+class Get_prdect_successful extends All_Statels{}
+
+
+
 
 
 

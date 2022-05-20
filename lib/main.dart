@@ -4,6 +4,9 @@ import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/modules/login.dart';
 import 'modules/Page_view.dart';
+import 'modules/add_prodect.dart';
+import 'modules/bottum_na.dart';
+import 'modules/home_screen.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,11 +25,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
 
-    return  MaterialApp(
+    return  const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:login_secrrn(),
+      home:bottom_na(),
     );
   }
 }
-
-
