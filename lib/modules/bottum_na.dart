@@ -13,6 +13,7 @@ class bottom_na extends StatefulWidget {
    const bottom_na({Key? key}) : super(key: key);
   @override
   State<bottom_na> createState() => _bottom_naState();
+
 }
 class _bottom_naState extends State<bottom_na> {
   int indexs =0;
@@ -49,7 +50,10 @@ class _bottom_naState extends State<bottom_na> {
         ),
         title: Text(titles[indexs],style:const TextStyle(color:Colors.black)),
         actions: [
-          IconButton(onPressed:(){},
+          IconButton(onPressed:(){
+            setState(() {
+            });
+          },
               icon:const Icon(Icons.search,color:Colors.black,)
           )
         ],

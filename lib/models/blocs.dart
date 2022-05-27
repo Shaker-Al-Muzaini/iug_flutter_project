@@ -174,9 +174,9 @@ class All_bloc_cubic extends Cubit<All_Statels> {
     required String? category,
     required String? price,
     required String? id_prdect,
-  }) {
+  }) async{
     emit(Add_new_prdect());
-    firebase_storage.FirebaseStorage.instance.ref().child
+   await firebase_storage.FirebaseStorage.instance.ref().child
       ('image_prdect/${Uri
         .file(image_prdect!.path)
         .pathSegments
@@ -211,15 +211,16 @@ class All_bloc_cubic extends Cubit<All_Statels> {
     required String? price,
     required String? id_prdect,
     String? image_prdects,
-  }) {
+  }) async{
     add_prodect model = add_prodect(
         name: name,
         price: price,
         img:image_prdects!,
         category: category,
         id_prdect: id_prdect
+
     );
-    FirebaseFirestore.instance.collection
+    await FirebaseFirestore.instance.collection
       ('prodect_Data_info').
     doc().set(model.toMap()).then((value) {
       emit(user_successful());
@@ -228,77 +229,20 @@ class All_bloc_cubic extends Cubit<All_Statels> {
     });
   }
   List<add_prodect> prodect_views = [];
-  void Get_Prodect() {
-    FirebaseFirestore.instance
+  void Get_Prodect() async{
+   await FirebaseFirestore.instance
         .collection('prodect_Data_info')
         .get().
     then((value) {
+     emit(get_successful());
       for (var element in value.docs) {
         prodect_views.add(add_prodect.formjson(element.data()));
       }
     })
-        .catchError((error) {
+
+       .catchError((error) {
+            emit(get_error());
 
     });
   }
 }
-//   Future<void> up_new_prodect({
-//     required File? img,
-//     String? imgs,
-//     required String name,
-//     required String category,
-//     required String price,
-//     String? uId,
-//     // required String id_prdect,
-//   }) async {
-//
-//     {
-//       emit(Add_new_prdect());
-//       final image_net = await firebase_storage.FirebaseStorage.instance.ref()
-//           .child
-//         ('prodect/${Uri
-//           .file(image_prdect!.path)
-//           .pathSegments
-//           .last}').
-//       putFile(img!).
-//       then((value) {
-//         value.ref.getDownloadURL().then((value) {
-//           emit(Add_prdect_successful());
-//           url_image = value;
-//         }).catchError((error) {
-//           emit(Add_prdect_error());
-//         });
-//       }
-//       );
-//     }
-//     add_prodect model = add_prodect(
-//       img:url_image,
-//       name: name,
-//       price: price,
-//       category: category,
-//       id_prdect: uId,
-//     );
-//     final image_net = await FirebaseFirestore.instance.collection
-//       ('prodect_Data');
-//     image_net.doc().set(model.toMap()).then((value) {
-//       emit(user_successful());
-//     }).catchError((error) {
-//       emit(user_error(error.toString()));
-//     });
-//   }
-//   List<add_prodect>prodect_views = [];
-//   void Get_Prodect() {
-//     FirebaseFirestore.instance
-//         .collection('prodect_Data')
-//         .get().
-//     then((value) {
-//       for (var element in value.docs) {
-//         prodect_views.add(add_prodect.formjson(element.data()));
-//       }
-//     })
-//         .catchError((error) {
-//
-//
-//     });
-//   }
-// }

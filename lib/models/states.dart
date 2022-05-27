@@ -67,8 +67,7 @@ class Get_prdect_error extends All_Statels{
 }
 class Get_prdect_successful extends All_Statels{}
 
-
-
-
+class get_error  extends All_Statels{}
+class get_successful  extends All_Statels{}
 
 

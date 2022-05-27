@@ -7,6 +7,7 @@ import 'package:iug_flutter_project/models/blocs.dart';
 import 'package:iug_flutter_project/models/states.dart';
 
 import '../models/states.dart';
+import 'login.dart';
 
 class add_prodects extends StatelessWidget {
         add_prodects({Key?  key,}) : super(key: key);
@@ -83,6 +84,8 @@ class add_prodects extends StatelessWidget {
                                  name:name_controller.text ,
                                  id_prdect:'1',
                                );
+                               Navigator.push(context,MaterialPageRoute
+                                 (builder: (context)=>   login_secrrn()));
 
                             },
                             child:Row(

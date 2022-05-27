@@ -194,7 +194,7 @@ class add_prodect{
     // String  url_image=All_bloc_cubic.get(context).url_image;
     return{
       'category':category,
-      'img':'img',
+      'img':img,
       'name':name,
       'price':price,
       'uId':id_prdect,

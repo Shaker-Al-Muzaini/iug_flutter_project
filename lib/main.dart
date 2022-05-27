@@ -27,7 +27,7 @@ class _MyAppState extends State<MyApp> {
 
     return  const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:bottom_na(),
+      home:Page_View(),
     );
   }
 }

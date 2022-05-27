@@ -16,6 +16,10 @@ class screen4 extends StatelessWidget{
           child: Column(
             mainAxisAlignment:MainAxisAlignment.center,
             children:[
+               const Image(
+                image:AssetImage('images/logo.jpeg'),
+              ),
+              const SizedBox(height:270),
               De_Button(
                 backgroundColor:Colors.redAccent,
                 function:(){

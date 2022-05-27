@@ -4,18 +4,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iug_flutter_project/models/states.dart';
-import 'package:iug_flutter_project/models/users.dart';
+import 'package:iug_flutter_project/modules/bottum_na.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
-
 import '../models/blocs.dart';
-import 'order_screen.dart';
+import '../models/users.dart';
+import 'add_pro.dart';
 class Prodect_secreen extends StatelessWidget{
 
   const Prodect_secreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context){
     return BlocProvider(
-      create: (BuildContext context)=>All_bloc_cubic(),
+      create: (BuildContext context)=>All_bloc_cubic()..Get_Prodect(),
       child: BlocConsumer<All_bloc_cubic ,All_Statels>(
         listener: (BuildContext context, state){},
         builder:(BuildContext context ,state){
@@ -27,7 +27,8 @@ class Prodect_secreen extends StatelessWidget{
               leading:
               IconButton(
                   onPressed:(){
-                    Navigator.pop(context);
+                    Navigator.push(context,MaterialPageRoute
+                      (builder: (context)=>const bottom_na()));
                   },
                   icon:
                   const Icon(Icons.arrow_back_ios_rounded,color:Colors.white)
@@ -36,7 +37,6 @@ class Prodect_secreen extends StatelessWidget{
               actions: [
                 IconButton(
                     onPressed:(){
-
                       All_bloc_cubic.get(context).Favort_prdect();
                     },
                     icon:
@@ -76,7 +76,6 @@ class Prodect_secreen extends StatelessWidget{
                                   fontSize:18,
                                   fontWeight:FontWeight.w400)
                           ),
-
                         ]
                     ),
                   ),
@@ -120,7 +119,7 @@ class Prodect_secreen extends StatelessWidget{
                             function:(){
                               Navigator.push(context,
                                   MaterialPageRoute(builder:(context)=>
-                                      oreder_screen())
+                                      add_pro())
                               );
                             },
                             text:'ADD TO CART',
@@ -203,7 +202,7 @@ class Prodect_secreen extends StatelessWidget{
     );
   }
 
-  Widget  Cart_Prodect( teype_product tp  , context)=>Column(
+  Widget  Cart_Prodect( teype_product  t  , context)=>Column(
       children:[
         Row(
           children: [
@@ -216,7 +215,7 @@ class Prodect_secreen extends StatelessWidget{
                       border:Border.all(width:1),
                     ),
                     child:  Image(
-                      image:AssetImage(tp.img!),
+                      image:AssetImage(t.img!),
                       height:120,
                       width:120,
                     ),
@@ -233,14 +232,14 @@ class Prodect_secreen extends StatelessWidget{
                     padding: const EdgeInsets.only(bottom:10),
                     child: Row(
                       children: [
-                        Text(tp.name!,
+                        Text(t.name!,
                           style:const TextStyle(
                             fontSize:20,
                           ),
                         ),
                         Padding(
                           padding:  const EdgeInsets.only(left:110),
-                          child: Text('\$'+tp.price!,
+                          child: Text('\$'+t.price!,
                               style:
                               const TextStyle(
                                   color:Colors.red)
@@ -253,7 +252,7 @@ class Prodect_secreen extends StatelessWidget{
                     padding: const EdgeInsets.only(bottom:15),
                     child: Row(
                       children: [
-                        Text(tp.category!,
+                        Text(t.category!,
                           style:const TextStyle(
                             fontSize:15,
                           ),

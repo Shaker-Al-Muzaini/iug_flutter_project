@@ -5,7 +5,7 @@ import 'package:iug_flutter_project/models/users.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
 import '../models/blocs.dart';
 import '../models/states.dart';
-class oreder_screen extends StatelessWidget {
+class add_pro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
@@ -14,46 +14,65 @@ class oreder_screen extends StatelessWidget {
         child: BlocConsumer<All_bloc_cubic ,All_Statels>(
           listener: (BuildContext context, state){},
           builder: (BuildContext context, Object? state){
-            return  SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height:240,
-                    color:Colors.black54,
-                    child:Padding(
-                      padding: const EdgeInsets.only(left:20,top:150),
-                      child: Column(
-                          crossAxisAlignment:CrossAxisAlignment.start,
-                          children:const[
-                            Text('Your Oreder',
-                              style:TextStyle(
-                                color:Colors.white,
-                                fontSize:24,
-                                fontWeight:FontWeight.w700,
-                              ),
-                            ),
-                            Text('Oreder NO.#123-456',
-                              style:TextStyle(
-                                color:Colors.white,
-                                fontSize:14,
-                                fontWeight:FontWeight.w300,
-                              ),
-                            ),
-                          ]
-                      ),
-                    ),
-                  ),
-                  ListView.separated(
-                    shrinkWrap:true,
-                    physics:const NeverScrollableScrollPhysics(),
-                    itemBuilder:(context,index)=>order((orders[index]),context),
-
-                    separatorBuilder:(context,index)=>const SizedBox(height:5),
-                    itemCount:orders.length,
+            return Scaffold(
+              appBar:AppBar(
+                elevation:0.0,
+                backgroundColor:Colors.white,
+                centerTitle:true,
+                leading:IconButton(
+                  onPressed:(){
+                  },
+                  icon:const Icon(Icons.menu,color:Colors.black),
+                ),
+                title: const Text('Prodect',style:TextStyle(color:Colors.black)),
+                actions: [
+                  IconButton(onPressed:(){
+                  },
+                      icon:const Icon(Icons.search,color:Colors.black,)
                   )
                 ],
+              ),
+              body:SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      height:240,
+                      color:Colors.black54,
+                      child:Padding(
+                        padding: const EdgeInsets.only(left:20,top:150),
+                        child: Column(
+                            crossAxisAlignment:CrossAxisAlignment.start,
+                            children:const[
+                              Text('Your Oreder',
+                                style:TextStyle(
+                                  color:Colors.white,
+                                  fontSize:24,
+                                  fontWeight:FontWeight.w700,
+                                ),
+                              ),
+                              Text('Oreder NO.#123-456',
+                                style:TextStyle(
+                                  color:Colors.white,
+                                  fontSize:14,
+                                  fontWeight:FontWeight.w300,
+                                ),
+                              ),
+                            ]
+                        ),
+                      ),
+                    ),
+                    ListView.separated(
+                      shrinkWrap:true,
+                      physics:const NeverScrollableScrollPhysics(),
+                      itemBuilder:(context,index)=>order((orders[index]),context),
 
+                      separatorBuilder:(context,index)=>const SizedBox(height:5),
+                      itemCount:orders.length,
+                    )
+                  ],
+
+                ),
               ),
             );
           },
@@ -148,10 +167,10 @@ class oreder_screen extends StatelessWidget {
                                   ),
                                   Text('${All_bloc_cubic.get(context).cont_order}' ,
                                       style:const
-                                  TextStyle(
-                                    fontSize:14,
+                                      TextStyle(
+                                        fontSize:14,
 
-                                  )),
+                                      )),
                                   TextButton(
                                     onPressed:(){
                                       All_bloc_cubic.get(context)

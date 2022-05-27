@@ -76,7 +76,7 @@ class home_screen extends StatelessWidget {
              children: [
                Padding(
                  padding: const EdgeInsets.only(right:45),
-                 child: Expanded(child: Text(p.name!)),
+                 child: Text(p.name!),
                ),
                Padding(
                  padding: const EdgeInsets.only(left:25),
@@ -84,11 +84,9 @@ class home_screen extends StatelessWidget {
                    onPressed:(){
                      All_bloc_cubic.get(context).isShos();
                    },
-                   icon: Expanded(
-                     child: Icon(Icons.business_center_rounded ,
-                       color:All_bloc_cubic.get(context).isShop ? Colors.black
-                           :Colors.red,),
-                   ),
+                   icon: Icon(Icons.business_center_rounded ,
+                     color:All_bloc_cubic.get(context).isShop ? Colors.black
+                         :Colors.red,),
                  ),
                ),
              ],
@@ -96,8 +94,8 @@ class home_screen extends StatelessWidget {
            Row(
              children:[
                Padding(
-                 padding: const EdgeInsets.only(right:45),
-                 child: Expanded(child: Text(p.category!)),
+                 padding: const EdgeInsets.only(right:40),
+                 child: Text(p.category!),
                ),
                Padding(
                  padding: const EdgeInsets.only(left:25),
@@ -105,16 +103,14 @@ class home_screen extends StatelessWidget {
                    onPressed:(){
                       All_bloc_cubic.get(context).isFavorts();
                    },
-                   icon:Expanded(
-                     child: Icon(Icons.favorite_border,
-                         color:All_bloc_cubic.get(context).isFavort ?Colors.black : Colors.red),
-                   ),
+                   icon:Icon(Icons.favorite_border,
+                       color:All_bloc_cubic.get(context).isFavort ?Colors.black : Colors.red),
                  ),
                ),
              ],
            ),
            Padding(
-             padding:  const EdgeInsets.only(right:125),
+             padding:  const EdgeInsets.only(right:120),
              child: Row(
                children:[
                  Text('\$'+p.price!,style:const TextStyle(color:Colors.red)),

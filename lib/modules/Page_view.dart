@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types, non_constant_identifier_names
 import 'package:flutter/material.dart';
+import 'package:iug_flutter_project/modules/screen4.dart';
 import 'package:iug_flutter_project/modules/widget_container.dart';
 import 'package:iug_flutter_project/modules/widget_page_view.dart';
 
@@ -37,9 +38,12 @@ class _Page_ViewState extends State<Page_View> {
               replacement: Align(
                 alignment: AlignmentDirectional.topEnd,
                 child: TextButton(onPressed: (){
-                  Navigator.pushReplacementNamed(context, '/SingIN');
-                },child: const Text('START',style: TextStyle(
-                  color: Colors.red,fontWeight: FontWeight.bold,     fontSize: 16,
+                  Navigator.push(context,
+                      MaterialPageRoute(builder:(context)=> const screen4()));
+
+                },
+                  child: const Text('START',style: TextStyle(
+                  color: Colors.red,fontWeight: FontWeight.bold,  fontSize: 16,
 
                 ),),),
               ),

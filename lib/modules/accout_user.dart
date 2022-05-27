@@ -7,6 +7,8 @@ import 'package:iug_flutter_project/shared/componest/componest.dart';
 
 import '../models/blocs.dart';
 import '../models/states.dart';
+import 'L_admim.dart';
+import 'login.dart';
 
 class accout_user extends StatelessWidget {
   const accout_user({Key? key}) : super(key: key);
@@ -74,7 +76,12 @@ class accout_user extends StatelessWidget {
        Expanded(child: Text(a.name!,style:const TextStyle(fontSize:18),)),
       Padding(
         padding:  const EdgeInsets.only(left:170),
-        child: IconButton(onPressed:a.on_tap!(),
+        child: IconButton(onPressed:(){
+          Navigator.push(context,
+              MaterialPageRoute(builder:(context)=>
+                  l_admin())
+          );
+        },
             icon:a.icon2!
         ),
       )

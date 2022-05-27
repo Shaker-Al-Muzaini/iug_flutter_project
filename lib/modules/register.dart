@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iug_flutter_project/modules/login.dart';
 import 'package:iug_flutter_project/shared/componest/componest.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import '../models/blocs.dart';
 import '../models/states.dart';
 import 'bottum_na.dart';
@@ -36,9 +35,7 @@ class Register_Screen extends StatelessWidget {
                   icon:const Icon(Icons
                       .arrow_back_ios,color:Colors.black,)
               ),),
-            body:ModalProgressHUD(
-              inAsyncCall:All_bloc_cubic.get(context).saving,
-              child: Center(
+            body:(Center(
                 child: SingleChildScrollView(
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
@@ -160,10 +157,6 @@ class Register_Screen extends StatelessWidget {
                                  All_bloc_cubic.get(context).saving=false;
                                       users.doc();
 
-
-
-
-
                              }
                             },
                             text:'Register',
@@ -189,7 +182,7 @@ class Register_Screen extends StatelessWidget {
                   ),
 
                 ),
-              ),
+              )
             ),
           );
         },
