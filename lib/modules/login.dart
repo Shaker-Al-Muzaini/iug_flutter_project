@@ -86,7 +86,7 @@ class login_secrrn extends StatelessWidget {
                                     icon:All_bloc_cubic.get(context).ispass?
                                     const Icon
                                       (Icons
-                                        .visibility) :const Icon
+                                        .visibility) : const Icon
                                       (Icons.visibility_off,color:Colors.black,),
                                     onPressed:()
                                     {

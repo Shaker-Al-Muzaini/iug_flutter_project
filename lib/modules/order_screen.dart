@@ -48,7 +48,6 @@ class oreder_screen extends StatelessWidget {
                     shrinkWrap:true,
                     physics:const NeverScrollableScrollPhysics(),
                     itemBuilder:(context,index)=>order((orders[index]),context),
-
                     separatorBuilder:(context,index)=>const SizedBox(height:5),
                     itemCount:orders.length,
                   )
@@ -143,13 +142,12 @@ class oreder_screen extends StatelessWidget {
                                         style:TextStyle(
                                           fontSize:14,
                                           fontWeight:FontWeight.w700,
-                                          color:Colors.black,
                                         )),
                                   ),
                                   Text('${All_bloc_cubic.get(context).cont_order}' ,
                                       style:const
                                   TextStyle(
-                                    fontSize:14,
+                                    fontSize:12,
 
                                   )),
                                   TextButton(
@@ -161,8 +159,6 @@ class oreder_screen extends StatelessWidget {
                                         style:TextStyle(
                                           fontSize:14,
                                           fontWeight:FontWeight.w700,
-                                          color:Colors.black,
-
                                         )),
                                   ),
                                 ],
@@ -170,12 +166,14 @@ class oreder_screen extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left:60),
+                            padding: const EdgeInsets.only(left:58),
                             child: Container(
                               decoration: BoxDecoration(
                                   color:Colors.red,
                                   borderRadius:BorderRadius.circular(1)),
-                              child: IconButton(onPressed:(){},
+                              child: IconButton(onPressed:(){
+
+                              },
                                   icon:const Icon(
                                     Icons.delete,color:Colors.white,
                                     size:35,

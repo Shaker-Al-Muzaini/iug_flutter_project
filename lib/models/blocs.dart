@@ -1,4 +1,4 @@
-// ignore_for_file: unused_element, camel_case_types, non_constant_identifier_names, avoid_print, unnecessary_this, unused_local_variable, await_only_futures
+// ignore_for_file: camel_case_types, non_constant_identifier_names, avoid_print, unused_element
 
 import 'dart:io';
 import 'dart:math';
@@ -9,8 +9,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:iug_flutter_project/models/states.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
-
 import '../shared/componest/componest.dart';
+import '../shared/network/cache_helper.dart';
 
 final storage = FirebaseStorage.instance;
 class All_bloc_cubic extends Cubit<All_Statels> {
@@ -239,10 +239,43 @@ class All_bloc_cubic extends Cubit<All_Statels> {
         prodect_views.add(add_prodect.formjson(element.data()));
       }
     })
-
        .catchError((error) {
             emit(get_error());
 
     });
   }
+
+
+  //Settings
+  bool is_on = false;
+  bool is_on2=false;
+  bool is_on3=false;
+void SwitchListTile_Setting() {
+  is_on = !is_on;
+  emit(is_SwitchListTile_Setting());
+}
+  void SwitchListTile_Setting2() {
+    is_on2 = !is_on2;
+    emit(is_SwitchListTile_Setting());
+  }
+  void SwitchListTile_Setting3() {
+    is_on3 = !is_on3;
+    emit(is_SwitchListTile_Setting());
+  }
+
+  bool isDark =false;
+void  ChengThemeMode({ bool? Shard}){
+  if(Shard != null) {
+    isDark =Shard;
+    emit(stat_ThemeMode());
+  } else {
+    isDark =! isDark;
+    Cache_Helper.putData(key: 'isDark', value:isDark).
+    then((value){
+      emit(stat_ThemeMode());
+    });
+  }
+}
+
+
 }

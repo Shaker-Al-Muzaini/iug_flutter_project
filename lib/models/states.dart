@@ -71,3 +71,8 @@ class get_error  extends All_Statels{}
 class get_successful  extends All_Statels{}
 
 
+class is_SwitchListTile_Setting extends All_Statels{
+
+}
+//stat_ThemeMode
+class stat_ThemeMode extends All_Statels{}

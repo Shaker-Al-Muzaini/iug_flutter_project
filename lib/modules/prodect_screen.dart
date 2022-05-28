@@ -134,7 +134,6 @@ class Prodect_secreen extends StatelessWidget{
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius:BorderRadius.circular(180),
-                              color:Colors.black12,
                             ),
                             child: Row(
                               children:[
@@ -146,7 +145,6 @@ class Prodect_secreen extends StatelessWidget{
                                       style:const TextStyle(
                                         fontSize:20,
                                         fontWeight:FontWeight.w700,
-                                        color:Colors.black,
                                       )),
                                 ),
                                 Text('${All_bloc_cubic.get(context).cont}' ,style:const
@@ -161,15 +159,19 @@ class Prodect_secreen extends StatelessWidget{
                                       style:const TextStyle(
                                         fontSize:20,
                                         fontWeight:FontWeight.w700,
-                                        color:Colors.black,
-
                                       )),
                                 ),
                               ],
                             ),
                           ),
                         ),
-                      ),
+                      )
+                      // ToggleButtons(
+                      //   borderRadius: BorderRadius.circular(30),
+                      //   borderColor: Colors.orange,
+                      //   borderWidth: 3,
+                      //   selectedBorderColor: Colors.deepOrange, isSelected: [false],
+                      //   ),
                     ],
                   ),
                   Padding(
