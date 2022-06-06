@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import, unused_local_variable, must_be_immutable, use_key_in_widget_constructors
+// ignore_for_file: unused_import, unused_local_variable, must_be_immutable, use_key_in_widget_constructors 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
