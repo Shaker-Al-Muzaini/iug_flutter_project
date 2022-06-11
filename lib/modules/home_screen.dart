@@ -12,7 +12,6 @@ import '../shared/componest/componest.dart';
 class home_screen extends StatelessWidget {
    home_screen({Key? key}) : super(key: key);
    final List<String> images = [
-     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBefbmtweoOOlk6yayvSFuPMbGALEy2qW8kQ&usqp=CAU',
      'https://sc01.alicdn.com/kf/Hc120553e92834db1b43cd6aae95b0269k/Cheap-mobile-new-model-bests-studio-bulk.jpg',
      'https://cdn.mena-tech.com/wp-content/uploads/2021/07/%D8%A7%D8%B3%D8%B9%D8%A7%D8%B1-%D8%AC%D9%88%D8%A7%D9%84%D8%A7%D8%AA-%D8%B3%D8%A7%D9%85%D8%B3%D9%88%D9%86%D8%AC.jpg',
      'https://www.albayan.ae/polopoly_fs/1.3601003.1562606608!/image/image.jpg',
@@ -153,7 +152,7 @@ class home_screen extends StatelessWidget {
                  child: Row(
                    crossAxisAlignment:CrossAxisAlignment.end,
                    children:[
-                      Text('\$'+p.price!,style:const TextStyle(color:Colors.red)),
+                      Text('\$${p.price!}',style:const TextStyle(color:Colors.red)),
                    ],
                  ),
                ),

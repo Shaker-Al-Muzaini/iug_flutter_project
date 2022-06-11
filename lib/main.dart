@@ -54,7 +54,7 @@ class  MyApp extends StatelessWidget{
               BottomNavigationBarThemeData(
                 selectedItemColor:Colors.deepOrange,
               ),
-            ),
+            ), 
             darkTheme:ThemeData(
               appBarTheme: AppBarTheme(
                 surfaceTintColor:Colors.white,
@@ -99,7 +99,7 @@ class  MyApp extends StatelessWidget{
             ),
             themeMode:All_bloc_cubic.get(context).isDark?ThemeMode.dark
                 :ThemeMode.light ,
-            home:const bottom_na(),
+            home:const Page_View(),
           );
         },
       ),

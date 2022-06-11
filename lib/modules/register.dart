@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, non_constant_identifier_names, must_be_immutable, avoid_print, sized_box_for_whitespace, empty_catches
+// ignore_for_file: camel_case_types, non_constant_identifier_names, must_be_immutable, avoid_print, sized_box_for_whitespace, empty_catches, use_build_context_synchronously
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,10 +9,10 @@ import '../models/states.dart';
 import 'bottum_na.dart';
 
 class Register_Screen extends StatelessWidget {
-  var email_controller=TextEditingController();
-  var password_controller=TextEditingController();
-  var name_controller=TextEditingController();
-  var Form_Register =GlobalKey<FormState>();
+ static var email_controller=TextEditingController();
+ static var password_controller=TextEditingController();
+ static var name_controller=TextEditingController();
+ static var Form_Register =GlobalKey<FormState>();
   bool ispass=true;
 
   Register_Screen({Key? key}) : super(key: key);

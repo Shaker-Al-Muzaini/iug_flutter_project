@@ -7,17 +7,16 @@ import 'package:iug_flutter_project/shared/componest/componest.dart';
 import '../models/blocs.dart';
 import '../models/states.dart';
 import 'L_admim.dart';
-import 'login.dart';
 
 
 class accout_user extends StatelessWidget {
-  const accout_user({Key? key}) : super(key: key);
-
+   const accout_user({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return
       BlocProvider(
         create: (BuildContext context)=>All_bloc_cubic(),
+
         child: BlocConsumer<All_bloc_cubic ,All_Statels>(
           listener:(context ,state){},
           builder:(context , state){
@@ -32,8 +31,10 @@ class accout_user extends StatelessWidget {
                         width:120,
                       ),
                       Column(
-                        children: const [
-                          Text('Shaker Almazuini',style:TextStyle(
+
+                        children:  const [
+                          Text('ShakerAlMauaini',
+                              style:TextStyle(
                             fontSize:14,
                             fontWeight:FontWeight.w600,
                           )),

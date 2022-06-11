@@ -1,5 +1,5 @@
-// ignore_for_file: camel_case_types, non_constant_identifier_names, avoid_print, unnecessary_const, must_be_immutable
 
+// ignore_for_file: camel_case_types, non_constant_identifier_names, prefer_interpolation_to_compose_strings
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -142,7 +142,7 @@ class Prodect_secreen extends StatelessWidget{
                                     All_bloc_cubic.get(context).cont_plus();
                                   },
                                   child: const Text('+',
-                                      style:const TextStyle(
+                                      style: TextStyle(
                                         fontSize:20,
                                         fontWeight:FontWeight.w700,
                                       )),
@@ -156,7 +156,7 @@ class Prodect_secreen extends StatelessWidget{
                                    All_bloc_cubic.get(context).cout_minus();
                                   },
                                   child: const Text('-',
-                                      style:const TextStyle(
+                                      style: TextStyle(
                                         fontSize:20,
                                         fontWeight:FontWeight.w700,
                                       )),

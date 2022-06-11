@@ -17,8 +17,6 @@ class All_bloc_cubic extends Cubit<All_Statels> {
   All_bloc_cubic() :super(initialStates());
   static All_bloc_cubic get(context) => BlocProvider.of(context);
   bool isShop = true;
-
-
   void isShos() {
     isShop = !isShop;
     emit(isShoping());
@@ -88,7 +86,6 @@ class All_bloc_cubic extends Cubit<All_Statels> {
   }) async {
     emit(user_loding());
   }
-
   Future <void> user_Regestar({
     required String name,
     required String email,
@@ -128,7 +125,6 @@ class All_bloc_cubic extends Cubit<All_Statels> {
   void lodig_bot() {
     emit(lodiding());
   }
-
 
   String? name;
   String? email;

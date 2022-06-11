@@ -67,7 +67,6 @@ class _Page_ViewState extends State<Page_View> {
               child:PageView(
                 onPageChanged: (int page){
                   setState(() {
-
                     _cureent_page=page;
                   });
                 },
@@ -82,6 +81,7 @@ class _Page_ViewState extends State<Page_View> {
    
                    widget_page_view(subtitle:'Now you dont need to go and bear the fatigue to pay your dues',
                     image: 'images/image1.png', title: 'Electronic payment support',),
+
                 ],
               ),
             ),
