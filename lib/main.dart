@@ -54,7 +54,7 @@ class  MyApp extends StatelessWidget{
               BottomNavigationBarThemeData(
                 selectedItemColor:Colors.deepOrange,
               ),
-            ),
+            ), 
             darkTheme:ThemeData(
               appBarTheme: AppBarTheme(
                 surfaceTintColor:Colors.white,
