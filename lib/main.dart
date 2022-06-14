@@ -1,31 +1,29 @@
-// ignore_for_file: unused_import, unused_local_variable, must_be_immutable, use_key_in_widget_constructors 
-import 'package:firebase_core/firebase_core.dart'; 
+// ignore_for_file: unused_import, unused_local_variable, must_be_immutable, use_key_in_widget_constructors
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iug_flutter_project/shared/network/cache_helper.dart';
-import 'package:iug_flutter_project/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/modules/login.dart';
 import 'models/blocs.dart';
 import 'models/states.dart';
 import 'modules/Page_view.dart';
-import 'modules/add_prodect.dart'; 
+import 'modules/add_prodect.dart';
 import 'modules/bottum_na.dart';
 import 'modules/home_screen.dart';
 import 'modules/screen4.dart';
-void main() async{
+Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
-   await Firebase.initializeApp();
-   await Cache_Helper.init();
-   bool?  isDark =Cache_Helper.getData(key: 'isDark');
+  await Firebase.initializeApp();
+  await Cache_Helper.init();
+  bool?  isDark =Cache_Helper.getData(key: 'isDark');
   runApp( MyApp(isDark!));
 }
 class  MyApp extends StatelessWidget{
-  late bool isDark;
+  late bool? isDark;
   MyApp(this.isDark);
-  @override 
+  @override
   Widget build(BuildContext context) {
     return   BlocProvider(
       create: (BuildContext context)=>All_bloc_cubic()..ChengThemeMode(Shard:
@@ -55,7 +53,7 @@ class  MyApp extends StatelessWidget{
               BottomNavigationBarThemeData(
                 selectedItemColor:Colors.deepOrange,
               ),
-            ), 
+            ),
             darkTheme:ThemeData(
               appBarTheme: AppBarTheme(
                 surfaceTintColor:Colors.white,
@@ -90,8 +88,8 @@ class  MyApp extends StatelessWidget{
                 ),
                 subtitle1:TextStyle(
                   color:Colors.white,
-               ),
-       
+                ),
+
               ),
               iconTheme:const IconThemeData(
                   color:Colors.white
@@ -107,5 +105,4 @@ class  MyApp extends StatelessWidget{
     );
   }
 }
-
 
