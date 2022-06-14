@@ -1,16 +1,17 @@
 // ignore_for_file: unused_import, unused_local_variable, must_be_immutable, use_key_in_widget_constructors 
 import 'package:firebase_core/firebase_core.dart'; 
-import 'package:flutter/services.dart';    
-import 'package:flutter_bloc/flutter_bloc.dart'; 
+import 'package:flutter/services.dart';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iug_flutter_project/shared/network/cache_helper.dart';
-import 'firebase_options.dart';  
+import 'package:iug_flutter_project/firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:iug_flutter_project/modules/login.dart';
 import 'models/blocs.dart';
 import 'models/states.dart';
 import 'modules/Page_view.dart';
-import 'modules/add_prodect.dart';  
+import 'modules/add_prodect.dart'; 
 import 'modules/bottum_na.dart';
 import 'modules/home_screen.dart';
 import 'modules/screen4.dart';
@@ -90,7 +91,7 @@ class  MyApp extends StatelessWidget{
                 subtitle1:TextStyle(
                   color:Colors.white,
                ),
-      
+       
               ),
               iconTheme:const IconThemeData(
                   color:Colors.white
@@ -106,4 +107,5 @@ class  MyApp extends StatelessWidget{
     );
   }
 }
+
 
