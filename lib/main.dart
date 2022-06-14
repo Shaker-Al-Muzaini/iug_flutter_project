@@ -13,6 +13,7 @@ import 'modules/add_prodect.dart';
 import 'modules/bottum_na.dart';
 import 'modules/home_screen.dart';
 import 'modules/screen4.dart';
+//7
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
