@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class Cache_Helper { 
   static late final SharedPreferences  sharedPreferences ; 
-  static init() async{ 
+  static init() async{  
     sharedPreferences =await SharedPreferences.getInstance();
   }
   static Future<bool> putData ({
