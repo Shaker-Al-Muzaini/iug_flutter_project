@@ -24,7 +24,7 @@ Future<void> main() async{
 class  MyApp extends StatelessWidget{
   late bool? isDark;
   MyApp(this.isDark);
-  @override
+  @override 
   Widget build(BuildContext context) {
     return   BlocProvider(
       create: (BuildContext context)=>All_bloc_cubic()..ChengThemeMode(Shard:
